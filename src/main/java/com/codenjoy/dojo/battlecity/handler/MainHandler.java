@@ -11,7 +11,13 @@ public class MainHandler implements IMainHandler {
     @Override
     public String handle(Board nowTable) {
         return new MoveActions().up();
-
-        //return "";
     }
+
+
+
+    /* TODOo Refactor it then
+    private boolean isDangerousToMoveRight(Board board){ return true; }
+    private boolean isDangerousToMoveLeft (Board board){ return true; }
+    private boolean isDangerousToMoveUp (Board board){ return true; }
+    private boolean isDangerousToMoveDown (Board board){ return true; }*/
 }
