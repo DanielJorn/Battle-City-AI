@@ -22,6 +22,7 @@ package com.codenjoy.dojo.battlecity.client;
  * #L%
  */
 
+import com.codenjoy.dojo.battlecity.handler.MainHandler;
 import com.codenjoy.dojo.client.Solver;
 import com.codenjoy.dojo.client.WebSocketRunner;
 import com.codenjoy.dojo.services.Dice;
@@ -35,7 +36,7 @@ public class YourSolver implements Solver<Board> {
 
     private Dice dice;
     private Board board;
-    private MySolver mySolver = new MySolver();
+    private MainHandler mainHandler = new MainHandler();
 
     public YourSolver(Dice dice) {
         this.dice = dice;
@@ -58,7 +59,7 @@ public class YourSolver implements Solver<Board> {
     }
 
     private String simulateAiBasedOn(Board board) {
-        return mySolver.handleBoard(board);
+        return mainHandler.handle(board);
     }
 
     private String someMeaningfulAction() {
